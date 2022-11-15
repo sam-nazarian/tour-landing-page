@@ -55,6 +55,7 @@ body {
 
   /* shift 50% in relation to elm, itself */
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
@@ -63,6 +64,7 @@ body {
 
   /* stop elm from shaking, hides back part of an elm */
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -121,4 +123,34 @@ body {
     opacity: 1;
     transform: translate(0)
   }
+}
+
+/* psudo class to style elm under a special condition */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+
+  /* animation must be in the initial state */
+  transition: all .2s;
+}
+
+.btn:hover {
+  /* in CSS y-axis moves from top to bottom, so top is negative, bottom is posetive */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  /* -1 in relation to link state, not the hover state */
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777
 }
