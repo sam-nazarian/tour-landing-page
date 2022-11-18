@@ -1,0 +1,22 @@
+{
+  "name": "tour-landing-page",
+  "version": "1.0.0",
+  "description": "Tour Landing Page",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samanfathnazarian/tour-landing-page.git"
+  },
+  "author": "Saman Fathnazarian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samanfathnazarian/tour-landing-page/issues"
+  },
+  "homepage": "https://github.com/samanfathnazarian/tour-landing-page#readme",
+  "devDependencies": {
+    "sass": "^1.56.1"
+  }
+}
