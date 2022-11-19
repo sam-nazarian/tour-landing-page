@@ -1,0 +1,24 @@
+// global definitions / settings
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  /* force inheritence on box-sizing for all elms */
+  box-sizing: inherit;
+}
+
+html {
+  /* 10/16=62.5% */
+  /* .625*16=10 */
+  // defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+
+  /* padding not inherited */
+  padding: 3rem;
+}
