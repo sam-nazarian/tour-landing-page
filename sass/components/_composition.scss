@@ -1,0 +1,44 @@
+.composition {
+  position: relative;
+  &__photo {
+    // use percentages for images so that they would adapt to the page
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgb($color-black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    // z-index: 10; //don't add transition for the z-index
+    transition: all 0.2s;
+    outline-offset: 2rem;
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      outline: 1.5rem solid $color-primary;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgb($color-black, 0.5); //bigger shadow when closer to user
+      z-index: 20; //higher than original z-index
+    }
+  }
+
+  // the div collapses due to our absolute positioning (since all pictures are absolutely positioned)
+  // you need to select some element that contains all the images in order to get the condition of :not(:hover) working
+  // composition:hover composition__photo:not(:hover)
+
+  //every composition__photo that is not hovered (doesn't after hover sudo class)
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+}
