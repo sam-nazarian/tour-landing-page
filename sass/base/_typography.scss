@@ -40,3 +40,22 @@ body {
     animation: moveInRight 1s ease-out;
   }
 }
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  // DOESN'T WORK as last-child takes effect if it's applied to the last element amongst its siblings.
+  // &:not(:last-child) {
+  //   margin-bottom: 3rem;
+  // }
+
+  &:not(:last-of-type) {
+    margin-bottom: 3rem;
+  }
+}
