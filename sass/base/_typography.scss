@@ -41,6 +41,28 @@ body {
   }
 }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+
+  background-clip: text;
+  // background gets clipped exactly were the text is
+  -webkit-background-clip: text;
+  // text is on top of background-clip
+  color: transparent;
+  transition: all 0.2s;
+  letter-spacing: 0.2rem;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+  // text-align: center; //doesn't work here must be on the parent
+}
+
 .heading-tertiary {
   font-size: $default-font-size;
   font-weight: 700;
