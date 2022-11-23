@@ -2,7 +2,7 @@
   width: 75%;
   margin: 0 auto; //works as it's a block elm inside a block elm
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
-  background-color: $color-white;
+  background-color: rgba($color-white, 0.6);
   border-radius: 3px;
   padding: 6rem;
   //since shape is transformed 3 left to left, add a padding of 3 to left, to offset that padding
