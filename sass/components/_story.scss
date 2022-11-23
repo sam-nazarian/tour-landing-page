@@ -1,0 +1,35 @@
+.story {
+  width: 75%;
+  margin: 0 auto; //works as it's a block elm inside a block elm
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  //since shape is transformed 3 left to left, add a padding of 3 to left, to offset that padding
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skew(-12deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    margin: 0;
+
+    // needs to be floated & have a height & width, defines were content floats around the elm
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%); //50% at center of the circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    transform: translateX(-3rem) skew(12deg); //for floated elm use transform not margin
+  }
+
+  &__img {
+    height: 100%; //100% of the parent
+  }
+
+  &__text {
+    transform: skew(12deg);
+  }
+}
