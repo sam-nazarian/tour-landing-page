@@ -1,5 +1,6 @@
 .btn {
   /* psudo class to style elm under a special condition */
+  &,
   &:link,
   &:visited {
     position: relative;
@@ -12,6 +13,10 @@
 
     /* animation must be in the initial state */
     transition: all 0.2s;
+
+    // CHANGE FOR THE <BUTTON> ELM
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -26,7 +31,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     /* -1 in relation to link state, not the hover state */
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
