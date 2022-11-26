@@ -23,6 +23,8 @@ html {
   //   font-size: 40%; //passing a block of code into the mixin, instead of a parameter() we use{}
   // }
 
+  //latest query selectors overwrite query selectors in the beginning
+
   // width < 1200?
   @include respond(tab-land) {
     font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
@@ -44,4 +46,8 @@ body {
 
   /* padding not inherited */
   padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
