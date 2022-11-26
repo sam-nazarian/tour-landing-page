@@ -12,8 +12,31 @@
 html {
   /* 10/16=62.5% */
   /* .625*16=10 */
-  // defines what 1rem is
+  // defines what 1rem is (1rem = 10px)
   font-size: 62.5%;
+
+  // same as below
+  // @media (max-width: 700px) {
+  //   font-size: 60%;
+  // }
+  // @include respond-phone {
+  //   font-size: 40%; //passing a block of code into the mixin, instead of a parameter() we use{}
+  // }
+
+  // width < 1200?
+  @include respond(tab-land) {
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
+  }
+
+  // width < 900?
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  // width > 1800px
+  @include respond(big-desktop) {
+    font-size: base-font-size(12px); //1 rem = 12px, 12/16 = 75%
+  }
 }
 
 body {
