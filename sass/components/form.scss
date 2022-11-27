@@ -15,6 +15,10 @@
     display: block; //so that it would have it's own line
     transition: all 0.3s; //animates the focus color change from red to green
 
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     &:focus {
       outline: none; //default focus
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
@@ -55,6 +59,11 @@
   &__radio-group {
     width: 49%;
     display: inline-block; //won't create any line breaks
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-label {
