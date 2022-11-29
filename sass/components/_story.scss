@@ -26,14 +26,20 @@
     float: left;
     margin: 0;
 
-    // needs to be floated & have a height & width, defines were content floats around the elm
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%); //50% at center of the circle
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-
     transform: translateX(-3rem) skew(12deg); //for floated elm use transform not margin
     position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+
+      // needs to be floated & have a height & width, defines were content floats around the elm
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%); //50% at center of the circle
+      border-radius: none;
+    }
 
     @include respond(phone) {
       transform: translateX(-3rem) skew(0);

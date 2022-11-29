@@ -1,6 +1,6 @@
 // after everytime a page is expanded this is required, so this is a layout
 .header {
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
 
   /* makes the entrie image fit fill the container (preserves aspect-ratio), makes bg image adopt to the elment size */
@@ -9,14 +9,18 @@
   background-position: top;
   position: relative;
 
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
 
   // , is an "or" in media queries
   // if resolution dpi >= 192 use this media query
   // if width is less than 600px, then 600px * 2 = 1200px, the max image size required is 1200px
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
-    background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)), url(../img/hero.jpg);
+  // min-resolution doesn't work on safari, so instead use -webkit-min-device
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
   }
 
   @include respond(phone) {

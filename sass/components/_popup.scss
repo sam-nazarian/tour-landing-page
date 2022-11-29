@@ -10,6 +10,13 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  // feature query (graceful degradation), what we want to happen if property is supported
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); //applies to elm that's behinde it, not the elm itself
+    background: rgba($color-black, 0.3);
+  }
+
   &__content {
     @include absCenter;
     width: 75%;
