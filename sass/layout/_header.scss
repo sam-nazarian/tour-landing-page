@@ -1,7 +1,7 @@
 // after everytime a page is expanded this is required, so this is a layout
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero-small.jpg);
 
   /* makes the entrie image fit fill the container (preserves aspect-ratio), makes bg image adopt to the elment size */
   background-size: cover;
@@ -11,6 +11,13 @@
 
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  // , is an "or" in media queries
+  // if resolution dpi >= 192 use this media query
+  // if width is less than 600px, then 600px * 2 = 1200px, the max image size required is 1200px
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)), url(../img/hero.jpg);
+  }
 
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
