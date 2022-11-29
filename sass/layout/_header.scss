@@ -19,7 +19,7 @@
   // if resolution dpi >= 192 use this media query
   // if width is less than 600px, then 600px * 2 = 1200px, the max image size required is 1200px
   // min-resolution doesn't work on safari, so instead use -webkit-min-device
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
     background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
   }
 
